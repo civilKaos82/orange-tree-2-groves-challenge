@@ -29,15 +29,14 @@ For more information on inheritance in Ruby, see this [description from learning
 Before we begin, copy the code from the orange tree challenge.  Bring over both the code for the orange tree and the orange fruit.  Bring the tests, too, and make sure that they are passing.
 
 
-###Release 0 : The `AppleTree` and `Apple` Classes
+### Release 0: Apples and Apple Trees
+We have an `OrangeTree` class with a public interface:  methods like `#age`, `#mature?`, `#dead?`, etc.  We are going to create an `AppleTree` class that copies this exact interface.  In other words, the messages that we send to an orange tree will be the same that we send to an apple tree.  
 
-Let's start by defining `AppleTree` and `Apple` classes.  They should behave the same as `OrangeTree`, although have a different life cycle.
+However, while orange trees and apples trees will have the same behaviors, they will have different life cycles.  They'll produce fruit at different ages, grow at different rates, die at different ages, etc.  The particulars for each tree type can be found in Table 1.
 
-That is, they should support all the same methods, but the particularities might differ: apples have a smaller diameter but apple trees bear fruit sooner and bear more fruit when they do.
+Start by writing tests for the `AppleTree` class.  Use the tests for the orange tree as a pattern, modifying them for the particulars of an apple tree.  Then, implement the class itself.  Don't forget to create an `Apple` class as well; we wouldn't want an apple tree that produces oranges.
 
-Creating the `Apple` and `AppleTree` class at this stage shouldn't involve much more than copying your `Orange` and `OrangeTree` classes and changing a few variables or constants.  If it's more complicated than that ask for help!
 
-You'll need to add tests for `AppleTree` and `Apple`. Those tests are going to look a whole lot like `OrangeTree` and `Orange`. Don't worry if your specs aren't DRY for now.
 
 ###Release 1 : The `FruitTree` and `Fruit` Classes
 
