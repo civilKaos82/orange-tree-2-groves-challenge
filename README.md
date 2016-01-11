@@ -1,11 +1,16 @@
 # Model a Grove of Different Trees
 
-##Summary
+## Summary
+In [another challenge][orange tree challenge] we modeled an orange tree for our client, Fran the Farmer.  We were able to model for her the production of an orange tree over the course of its lifetime.  She was satisfied enough with our work that she's engaging us on another project.  Her orange farm is considering the acquisition of a neighboring tree grove, a grove that includes varieties of trees beyond orange trees.
 
- We've built a simple model of a single fruit and a single fruit tree with our `Orange` and `OrangeTree` classes.  Let's expand it to a whole grove with multiple kinds of trees.
+We're going to build a simple model of a tree grove.  We'll begin with our  orange tree and use it as a pattern for modeling an apple tree.  Once we have the two tree classes and the corresponding fruit classes, we'll take time to refactor our code.  Once our code is refactored, we'll add an additional tree type:  pear trees.  Finally, we'll model the tree grove.
 
-By the end we'll have classes like `FruitGrove`, `AppleTree`, and `PearTree`.
-You should bring your code _and_ tests over from the Orange Tree 1 challenge.
+
+### Inheritance
+When we later refactor our code, we'll use *inheritance* to eliminate the repetition that exists in what will then be our `OrangeTree` and `AppleTree` classes.  We'll create a general `FruitTree` class, from which we can create more specific classes of trees:  orange, apple, and later pear.  Our generic fruit tree model will provide the basic behaviors of our trees: they grow, they mature, they die, etc.  The orange, apple, and pear trees will share the same basic behaviors, but each will differ in its implementation: one tree produces oranges, another apples; one tree dies at age 100, another at 45; and so on.
+
+For more information on inheritance in Ruby, see this [description from learningruby.com][rubylearning.com inheritance].
+
 
 ##Releases
 
@@ -58,3 +63,7 @@ Let's plant some trees!  Create a `TreeGrove` class that works as follows.
 5. There is a `TreeGrove#dead_trees` method which returns all dead trees
 
 Write tests for `TreeGrove` to assert that it's working as your expect.
+
+
+[orange tree challenge]: ../../../orange-tree-1-just-oranges-challenge
+[rubylearning.com inheritance]: http://rubylearning.com/satishtalim/ruby_inheritance.html
