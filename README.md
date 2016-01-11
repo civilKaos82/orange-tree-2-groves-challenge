@@ -12,7 +12,10 @@ When we later refactor our code, we'll use *inheritance* to eliminate the repeti
 For more information on inheritance in Ruby, see this [description from learningruby.com][rubylearning.com inheritance].
 
 
-##Releases
+## Releases
+### Pre-release:  Copy the Orange Tree Model
+Before we begin, copy the code from the orange tree challenge.  Bring over both the code for the orange tree and the orange fruit.  Bring the tests, too, and make sure that they are passing.
+
 
 ###Release 0 : The `AppleTree` and `Apple` Classes
 
