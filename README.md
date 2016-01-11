@@ -20,7 +20,7 @@ For more information on inheritance in Ruby, see this [description from learning
 | age of death       | 100          | 45          | 40         |
 | type of fruit      | oranges      | apples      | pears      |
 
-*Table 1*.  Data for orange trees and apple trees.
+*Table 1*.  Data for orange, apple, and pear trees.
 
 
 
