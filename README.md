@@ -95,6 +95,8 @@ Define a `TreeGrove` class that will be responsible for managing the trees in th
 *Hint:* We might also want to edit our trees, if their current behaviors don't meet the requirements of our application.  For example, we might want to initialize them with a given age and height.
 
 
+## Conclusion
+In this challenge, we've begun to explore inheritance.  It's a way to share behavior among similar types of objects, which can make our code easier to maintain.  Inheritance is only appropriate when the subclass (e.g., `OrangeTree`) is a specific type of the superclass (e.g., `FruitTree`).  We'll have more opportunities to explore inheritance and how it's implemented in Ruby as we proceed through Dev Bootcamp.
 
 
 [orange tree challenge]: ../../../orange-tree-1-just-oranges-challenge
