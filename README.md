@@ -1,4 +1,4 @@
-# Orange Tree 2 Groves
+# Model a Grove of Different Trees
 
 ##Learning Competencies
 
