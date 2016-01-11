@@ -38,27 +38,32 @@ Start by writing tests for the `AppleTree` class.  Use the tests for the orange 
 
 
 
-###Release 1 : The `FruitTree` and `Fruit` Classes
+### Release 1: From Specific Types to a General Type
+We have now modeled two specific types of fruit tree.  Our orange and apple trees behave very similarly.  Based on the similarities in behavior among the two types of tree, we can create a more generalize case: a fruit tree.  
 
-You now have two kinds of trees which each bear their own fruits.  They have tons of code in common.  One way to deal with this repetition is to **abstract out** the common parts into a parent class.  We'll call that parent class `FruitTree`, so your `OrangeTree` class should now look like:
+We can create a `FruitTree` class with generalized behaviors.  Our `OrangeTree` and `AppleTree` classes can inherit behaviors from this general class and implement their own specifics.  For example, both orange trees and apple trees have a height.  With each passing season, the trees grow by some amount until they reach a maximum height.  This is the general behavior that can be represented in a general fruit tree model.  That general behavior would be inherited by each of the specific types of fruit tree with each specific type defining by how much it grows each year and its own maximum height.
+
 
 ```ruby
+class FruitTree
+  # define the class
+end
+
 class OrangeTree < FruitTree
-  # code goes here
+  # define the class
+end
+
+class AppleTree < FruitTree
+  # define the class
 end
 ```
+*Figure 1*. Defining `OrangeTree` and `AppleTree` classes which inherit from a `FruitTree` superclass or parent class. 
 
-Think carefully about the parameters that make an orange tree different from an apple tree.  They might include parameters like
 
-1. How much the tree grows each year
-2. How old the tree must be before it stops growing
-3. How old the tree must be before it bares fruit
-4. How much fruit the tree yields each year
-5. Maybe most importantly, what *kind* of fruit it bares
+Define a `FruitTree` class and modify the `OrangeTree` and `AppleTree` classes to inherit from it (see Figure 1).  Incrementally move the shared behaviors from the specific trees to the general tree.  Do the same for our fruit classes.
 
-There could be others, but this gives you an idea of some of the "parameters" that differentiate one fruit tree's behavior from another.
+As we do so, our tests should continue to pass—we might need to make small updates to our tests if we change our method names, but we shouldn't need to change the logic of our tests. That's the beauty of tests, they're a safety net when we engage in large refactors like this one. If our tests continue to pass, we know we're in good shape. If not, we get to catch our mistakes early.
 
-Most importantly, your tests should still run. You might need to make small fixes if you change your method names on your classes, but you shouldn't need to change the logic of your tests. That's the beauty of tests, they're a safety net when we engage in large refactors like this one. If they continue to go green, you know you're in good shape. If not, you get to catch your mistakes early.
 
 #### The `PearTree` and `Pear` Classes
 
