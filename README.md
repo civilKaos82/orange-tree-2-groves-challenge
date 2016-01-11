@@ -7,9 +7,21 @@ We're going to build a simple model of a tree grove.  We'll begin with our  oran
 
 
 ### Inheritance
-When we later refactor our code, we'll use *inheritance* to eliminate the repetition that exists in what will then be our `OrangeTree` and `AppleTree` classes.  We'll create a general `FruitTree` class, from which we can create more specific classes of trees:  orange, apple, and later pear.  Our generic fruit tree model will provide the basic behaviors of our trees: they grow, they mature, they die, etc.  The orange, apple, and pear trees will share the same basic behaviors, but each will differ in its implementation: one tree produces oranges, another apples; one tree dies at age 100, another at 45; and so on.
+When we later refactor our code, we'll use *inheritance* to eliminate the repetition that exists in what will then be our `OrangeTree` and `AppleTree` classes.  We'll create a general `FruitTree` class, from which we can create more specific classes of trees:  orange, apple, and later pear.  Our generic fruit tree model will provide the basic behaviors of our trees: they grow, they mature, they die, etc.  The orange, apple, and pear trees will share the same basic behaviors, but each will differ in its implementation: one tree produces oranges, another apples; one tree dies at age 100, another at 45; and so on.  See Table 1.
 
 For more information on inheritance in Ruby, see this [description from learningruby.com][rubylearning.com inheritance].
+
+|                    | orange trees | apple trees | pear trees |
+| ------------------ | -----------: | ----------: | ---------: |
+| maximum height     | 30           | 26          | 20         |
+| growth rate        | 2.5          | 2           | 2.5        |
+| annual fruit yield | 100 - 300    | 400 - 600   | 175 - 225  |
+| age of maturity    | 6            | 5           | 5          |
+| age of death       | 100          | 45          | 40         |
+| type of fruit      | oranges      | apples      | pears      |
+
+*Table 1*.  Data for orange trees and apple trees.
+
 
 
 ## Releases
