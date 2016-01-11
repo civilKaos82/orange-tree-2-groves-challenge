@@ -71,17 +71,30 @@ Now that we have a generalize fruit tree model from which we can derive specific
 Yep, we need to write tests for this type of tree, too. It might feel like the tests for each class are repetitious and that writing them involves a lot of copying and pasting with minor edits.  RSpec does have ways to DRY-ly and more elegantly test shared behaviors, but don't worry about that just yet.  All in good time.
 
 
-### Release 3: Create a `TreeGrove` Class
+### Release 3: Model the Tree Grove
 
-Let's plant some trees!  Create a `TreeGrove` class that works as follows.
+| tree age | orange trees | apple trees | pear trees |
+| -------- | -----------: | ----------: | ---------: |
+| 0        | 0            | 10          | 10         |
+| 5        | 20           | 10          | 0          |
+| 20       | 20           | 20          | 10         |
+| 37       | 10           | 20          | 20         |
+| 50       | 20           | 5           | 10         |
 
-1. You can initialize a `TreeGrove` with an `Array` of any kind of `FruitTree`, of any age.
-2. There is a `TreeGrove#age!` method will will age each tree in the grove one year by calling `age!` on each `FruitTree`.
-3. There is a `TreeGrove#trees` method which returns all trees
-4. There is a `TreeGrove#mature_trees` method which returns all trees that can currently bear fruit
-5. There is a `TreeGrove#dead_trees` method which returns all dead trees
+*Table 2*.  Quantity of trees in the grove by age and type.
 
-Write tests for `TreeGrove` to assert that it's working as your expect.
+
+Now that we have a model for each of the tree types present in the tree grove that Fran the Farmer is investigating, it's time to put them to use by modeling the production of the grove.  Fran has provided us with details on the trees present in the tree grove (see Table 2).  She wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.
+
+Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  The behaviors of the class will be dictated by the needs of our application, but for a start ...
+
+1. A tree grove can be initialized with an array of trees.
+2. When a tree grove passes a growing season, each of its trees passes a season.
+
+
+*Hint:* We might also want to edit our trees, if their current behaviors don't meet the requirements of our application.  For example, we might want to initialize them with a given age and height.
+
+
 
 
 [orange tree challenge]: ../../../orange-tree-1-just-oranges-challenge
