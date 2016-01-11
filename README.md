@@ -65,11 +65,11 @@ Define a `FruitTree` class and modify the `OrangeTree` and `AppleTree` classes t
 As we do so, our tests should continue to pass—we might need to make small updates to our tests if we change our method names, but we shouldn't need to change the logic of our tests. That's the beauty of tests, they're a safety net when we engage in large refactors like this one. If our tests continue to pass, we know we're in good shape. If not, we get to catch our mistakes early.
 
 
-### Release 2: The `PearTree` and `Pear` Classes
+### Release 2: Pears and Pear Trees
+Now that we have a generalize fruit tree model from which we can derive specific types of trees, we'll take advantage of this by creating an additional tree type:  `PearTree`.
 
-Now that you have `FruitTree` and `Fruit` classes, create a `PearTree` class that yields `Pears`, just like `OrangeTree` and `AppleTree`.
+Yep, we need to write tests for this type of tree, too. It might feel like the tests for each class are repetitious and that writing them involves a lot of copying and pasting with minor edits.  RSpec does have ways to DRY-ly and more elegantly test shared behaviors, but don't worry about that just yet.  All in good time.
 
-Yup, you'll want to write tests for that too. It's going to be feel like you're copying and pasting with minor edits. Don't worry about it. Our RSpec-fu will improve over time.
 
 ### Release 3: Create a `TreeGrove` Class
 
