@@ -41,7 +41,7 @@ Start by writing tests for the `AppleTree` class.  Use the tests for the orange 
 ### Release 1: From Specific Types to a General Type
 We have now modeled two specific types of fruit tree.  Our orange and apple trees behave very similarly.  Based on the similarities in behavior among the two types of tree, we can create a more generalized case: a fruit tree.
 
-We can create a `FruitTree` class with generalized behaviors.  Our `OrangeTree` and `AppleTree` classes can inherit behaviors from this general class and implement their own specifics.  For example, both orange trees and apple trees have a height.  With each passing season, the trees grow by some amount until they reach a maximum height.  This is the general behavior that can be represented in a general fruit tree model.  That general behavior would be inherited by each of the specific types of fruit tree with each specific type defining by how much it grows each year and its own maximum height.
+We can create a `FruitTree` class with generalized behaviors.  Our `OrangeTree` and `AppleTree` classes can inherit behaviors from this general class and implement their own specifics.  For example, both orange trees and apple trees have a height.  With each passing season, the trees grow by some amount until they reach a maximum height.  This is the general behavior that can be represented in a general fruit tree model.  That general behavior would be inherited by each of the specific types of fruit tree with each specific type defining how much it grows each year and its own maximum height.
 
 
 ```ruby
