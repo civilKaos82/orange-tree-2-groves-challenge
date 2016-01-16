@@ -66,7 +66,7 @@ As we do so, our tests should continue to pass—we might need to make small upd
 
 
 ### Release 2: Pears and Pear Trees
-Now that we have a generalize fruit tree model from which we can derive specific types of trees, we'll take advantage of this by creating an additional tree type:  `PearTree`.
+Now that we have a generalized fruit tree model from which we can derive specific types of trees, we'll take advantage of this by creating an additional tree type:  `PearTree`.
 
 Yep, we need to write tests for this type of tree, too. It might feel like the tests for each class are repetitious and that writing them involves a lot of copying and pasting with minor edits.  RSpec does have ways to DRY-ly and more elegantly test shared behaviors, but don't worry about that just yet.  All in good time.
 
