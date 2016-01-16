@@ -30,7 +30,7 @@ Before we begin, copy the code from the orange tree challenge.  Bring over both 
 
 
 ### Release 0: Apples and Apple Trees
-We have an `OrangeTree` class with a public interface:  methods like `#age`, `#mature?`, `#dead?`, etc.  We are going to create an `AppleTree` class that copies this exact interface.  In other words, the messages that we send to an orange tree will be the same that we send to an apple tree.  
+We have an `OrangeTree` class with a public interface:  methods like `#age`, `#mature?`, `#dead?`, etc.  We are going to create an `AppleTree` class that copies this exact interface.  In other words, the messages that we send to an orange tree will be the same that we send to an apple tree.
 
 However, while orange trees and apples trees will have the same behaviors, they will have different life cycles.  They'll produce fruit at different ages, grow at different rates, die at different ages, etc.  The particulars for each tree type can be found in Table 1.
 
@@ -39,7 +39,7 @@ Start by writing tests for the `AppleTree` class.  Use the tests for the orange 
 
 
 ### Release 1: From Specific Types to a General Type
-We have now modeled two specific types of fruit tree.  Our orange and apple trees behave very similarly.  Based on the similarities in behavior among the two types of tree, we can create a more generalize case: a fruit tree.  
+We have now modeled two specific types of fruit tree.  Our orange and apple trees behave very similarly.  Based on the similarities in behavior among the two types of tree, we can create a more generalized case: a fruit tree.
 
 We can create a `FruitTree` class with generalized behaviors.  Our `OrangeTree` and `AppleTree` classes can inherit behaviors from this general class and implement their own specifics.  For example, both orange trees and apple trees have a height.  With each passing season, the trees grow by some amount until they reach a maximum height.  This is the general behavior that can be represented in a general fruit tree model.  That general behavior would be inherited by each of the specific types of fruit tree with each specific type defining by how much it grows each year and its own maximum height.
 
@@ -57,7 +57,7 @@ class AppleTree < FruitTree
   # define the class
 end
 ```
-*Figure 1*. Defining `OrangeTree` and `AppleTree` classes which inherit from a `FruitTree` superclass or parent class. 
+*Figure 1*. Defining `OrangeTree` and `AppleTree` classes which inherit from a `FruitTree` superclass or parent class.
 
 
 Define a `FruitTree` class and modify the `OrangeTree` and `AppleTree` classes to inherit from it (see Figure 1).  Incrementally move the shared behaviors from the specific trees to the general tree.  Do the same for our fruit classes.
