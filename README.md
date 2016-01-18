@@ -1,64 +1,103 @@
-# Orange Tree 2 Groves
+# Model a Grove of Different Trees
 
-##Learning Competencies
+## Summary
+In [another challenge][orange tree challenge] we modeled an orange tree for our client, Fran the Farmer.  We were able to model for her the production of an orange tree over the course of its lifetime.  She was satisfied enough with our work that she's engaging us on another project.  Her orange farm is considering the acquisition of a neighboring tree grove, a grove that includes varieties of trees beyond orange trees.
 
-* Working with inheritance in OO programing
+We're going to build a simple model of a tree grove.  We'll begin with our  orange tree and use it as a pattern for modeling an apple tree.  Once we have the two tree classes and the corresponding fruit classes, we'll take time to refactor our code.  Once our code is refactored, we'll add an additional tree type:  pear trees.  Finally, we'll model the tree grove.
 
-##Summary
 
- We've built a simple model of a single fruit and a single fruit tree with our `Orange` and `OrangeTree` classes.  Let's expand it to a whole grove with multiple kinds of trees.
+### Inheritance
+When we later refactor our code, we'll use *inheritance* to eliminate the repetition that exists in what will then be our `OrangeTree` and `AppleTree` classes.  We'll create a general `FruitTree` class, from which we can create more specific classes of trees:  orange, apple, and later pear.  Our generic fruit tree model will provide the basic behaviors of our trees: they grow, they mature, they die, etc.  The orange, apple, and pear trees will share the same basic behaviors, but each will differ in its implementation: one tree produces oranges, another apples; one tree dies at age 100, another at 45; and so on.  See Table 1.
 
-By the end we'll have classes like `FruitGrove`, `AppleTree`, and `PearTree`.
-You should bring your code _and_ tests over from the Orange Tree 1 challenge.
+For more information on inheritance in Ruby, see this [description from learningruby.com][rubylearning.com inheritance].
 
-##Releases
+|                    | orange trees | apple trees | pear trees |
+| ------------------ | -----------: | ----------: | ---------: |
+| maximum height     | 30           | 26          | 20         |
+| growth rate        | 2.5          | 2           | 2.5        |
+| annual fruit yield | 100 - 300    | 400 - 600   | 175 - 225  |
+| age of maturity    | 6            | 5           | 5          |
+| age of death       | 100          | 45          | 40         |
+| type of fruit      | oranges      | apples      | pears      |
 
-###Release 0 : The `AppleTree` and `Apple` Classes
+*Table 1*.  Data for orange, apple, and pear trees.
 
-Let's start by defining `AppleTree` and `Apple` classes.  They should behave the same as `OrangeTree`, although have a different life cycle.
 
-That is, they should support all the same methods, but the particularities might differ: apples have a smaller diameter but apple trees bear fruit sooner and bear more fruit when they do.
 
-Creating the `Apple` and `AppleTree` class at this stage shouldn't involve much more than copying your `Orange` and `OrangeTree` classes and changing a few variables or constants.  If it's more complicated than that ask for help!
+## Releases
+### Pre-release:  Copy the Orange Tree Model
+Before we begin, copy the code from the orange tree challenge.  Bring over both the code for the orange tree and the orange fruit.  Bring the tests, too, and make sure that they are passing.
 
-You'll need to add tests for `AppleTree` and `Apple`. Those tests are going to look a whole lot like `OrangeTree` and `Orange`. Don't worry if your specs aren't DRY for now.
 
-###Release 1 : The `FruitTree` and `Fruit` Classes
+### Release 0: Apples and Apple Trees
+We have an `OrangeTree` class with a public interface:  methods like `#age`, `#mature?`, `#dead?`, etc.  We are going to create an `AppleTree` class that copies this exact interface.  In other words, the messages that we send to an orange tree will be the same that we send to an apple tree.
 
-You now have two kinds of trees which each bear their own fruits.  They have tons of code in common.  One way to deal with this repetition is to **abstract out** the common parts into a parent class.  We'll call that parent class `FruitTree`, so your `OrangeTree` class should now look like:
+However, while orange trees and apples trees will have the same behaviors, they will have different life cycles.  They'll produce fruit at different ages, grow at different rates, die at different ages, etc.  The particulars for each tree type can be found in Table 1.
+
+Start by writing tests for the `AppleTree` class.  Use the tests for the orange tree as a pattern, modifying them for the particulars of an apple tree.  Then, implement the class itself.  Don't forget to create an `Apple` class as well; we wouldn't want an apple tree that produces oranges.
+
+
+
+### Release 1: From Specific Types to a General Type
+We have now modeled two specific types of fruit tree.  Our orange and apple trees behave very similarly.  Based on the similarities in behavior among the two types of tree, we can create a more generalized case: a fruit tree.
+
+We can create a `FruitTree` class with generalized behaviors.  Our `OrangeTree` and `AppleTree` classes can inherit behaviors from this general class and implement their own specifics.  For example, both orange trees and apple trees have a height.  With each passing season, the trees grow by some amount until they reach a maximum height.  This is the general behavior that can be represented in a general fruit tree model.  That general behavior would be inherited by each of the specific types of fruit tree with each specific type defining how much it grows each year and its own maximum height.
+
 
 ```ruby
+class FruitTree
+  # define the class
+end
+
 class OrangeTree < FruitTree
-  # code goes here
+  # define the class
+end
+
+class AppleTree < FruitTree
+  # define the class
 end
 ```
+*Figure 1*. Defining `OrangeTree` and `AppleTree` classes which inherit from a `FruitTree` superclass or parent class.
 
-Think carefully about the parameters that make an orange tree different from an apple tree.  They might include parameters like
 
-1. How much the tree grows each year
-2. How old the tree must be before it stops growing
-3. How old the tree must be before it bares fruit
-4. How much fruit the tree yields each year
-5. Maybe most importantly, what *kind* of fruit it bares
+Define a `FruitTree` class and modify the `OrangeTree` and `AppleTree` classes to inherit from it (see Figure 1).  Incrementally move the shared behaviors from the specific trees to the general tree.  Do the same for our fruit classes.
 
-There could be others, but this gives you an idea of some of the "parameters" that differentiate one fruit tree's behavior from another.
+As we do so, our tests should continue to pass—we might need to make small updates to our tests if we change our method names, but we shouldn't need to change the logic of our tests. That's the beauty of tests, they're a safety net when we engage in large refactors like this one. If our tests continue to pass, we know we're in good shape. If not, we get to catch our mistakes early.
 
-Most importantly, your tests should still run. You might need to make small fixes if you change your method names on your classes, but you shouldn't need to change the logic of your tests. That's the beauty of tests, they're a safety net when we engage in large refactors like this one. If they continue to go green, you know you're in good shape. If not, you get to catch your mistakes early.
 
-#### The `PearTree` and `Pear` Classes
+### Release 2: Pears and Pear Trees
+Now that we have a generalized fruit tree model from which we can derive specific types of trees, we'll take advantage of this by creating an additional tree type:  `PearTree`.
 
-Now that you have `FruitTree` and `Fruit` classes, create a `PearTree` class that yields `Pears`, just like `OrangeTree` and `AppleTree`.
+Yep, we need to write tests for this type of tree, too. It might feel like the tests for each class are repetitious and that writing them involves a lot of copying and pasting with minor edits.  RSpec does have ways to DRY-ly and more elegantly test shared behaviors, but don't worry about that just yet.  All in good time.
 
-Yup, you'll want to write tests for that too. It's going to be feel like you're copying and pasting with minor edits. Don't worry about it. Our RSpec-fu will improve over time.
 
-###Release 2 : Create a `TreeGrove` Class
+### Release 3: Model the Tree Grove
 
-Let's plant some trees!  Create a `TreeGrove` class that works as follows.
+| tree age | orange trees | apple trees | pear trees |
+| -------- | -----------: | ----------: | ---------: |
+| 0        | 0            | 10          | 10         |
+| 5        | 20           | 10          | 0          |
+| 20       | 20           | 20          | 10         |
+| 37       | 10           | 20          | 20         |
+| 50       | 20           | 5           | 10         |
 
-1. You can initialize a `TreeGrove` with an `Array` of any kind of `FruitTree`, of any age.
-2. There is a `TreeGrove#age!` method will will age each tree in the grove one year by calling `age!` on each `FruitTree`.
-3. There is a `TreeGrove#trees` method which returns all trees
-4. There is a `TreeGrove#mature_trees` method which returns all trees that can currently bear fruit
-5. There is a `TreeGrove#dead_trees` method which returns all dead trees
+*Table 2*.  Quantity of trees in the grove by age and type.
 
-Write tests for `TreeGrove` to assert that it's working as your expect.
+
+Now that we have a model for each of the tree types present in the tree grove that Fran the Farmer is investigating, it's time to put them to use by modeling the production of the grove.  Fran has provided us with details on the trees present in the tree grove (see Table 2).  She wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.
+
+Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  The behaviors of the class will be dictated by the needs of our application, but for a start ...
+
+1. A tree grove can be initialized with an array of trees.
+2. When a tree grove passes a growing season, each of its trees passes a season.
+
+
+*Hint:* We might also want to edit our trees, if their current behaviors don't meet the requirements of our application.  For example, we might want to initialize them with a given age and height.
+
+
+## Conclusion
+In this challenge, we've begun to explore inheritance.  It's a way to share behavior among similar types of objects, which can make our code easier to maintain.  Inheritance is only appropriate when the subclass (e.g., `OrangeTree`) is a specific type of the superclass (e.g., `FruitTree`).  We'll have more opportunities to explore inheritance and how it's implemented in Ruby as we proceed through Dev Bootcamp.
+
+
+[orange tree challenge]: ../../../orange-tree-1-just-oranges-challenge
+[rubylearning.com inheritance]: http://rubylearning.com/satishtalim/ruby_inheritance.html
