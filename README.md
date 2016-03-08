@@ -13,7 +13,7 @@ For more information on inheritance in Ruby, see this [description from learning
 
 |                    | orange trees | apple trees | pear trees |
 | ------------------ | -----------: | ----------: | ---------: |
-| maximum height     | 30           | 26          | 20         |
+| maximum height     | 25           | 26          | 20         |
 | growth rate        | 2.5          | 2           | 2.5        |
 | annual fruit yield | 100 - 300    | 400 - 600   | 175 - 225  |
 | age of maturity    | 6            | 5           | 5          |
