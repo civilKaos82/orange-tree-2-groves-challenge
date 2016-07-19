@@ -73,15 +73,14 @@ Yep, we need to write tests for this type of tree, too. It might feel like the t
 
 ### Release 3: Model the Tree Grove
 
-| tree age | orange trees | apple trees | pear trees |
-| -------- | -----------: | ----------: | ---------: |
-| 0        | 0            | 10          | 10         |
-| 5        | 20           | 10          | 0          |
-| 20       | 20           | 20          | 10         |
-| 37       | 10           | 20          | 20         |
-| 50       | 20           | 5           | 10         |
+|                  | Age 0 | Age 5 | Age 20 | Age 37 | Age 50 |
+| :--------------- | ----: | ----: | -----: | -----: | -----: |
+| **orange trees** | 0     | 20    | 20     | 10     | 20     |
+| **apple trees**  | 10    | 10    | 20     | 20     | 5      |
+| **pear trees**   | 10    | 0     | 10     | 20     | 10     |
 
-*Table 2*.  Quantity of trees in the grove by age and type.
+
+*Table 2*.  The number of trees in the grove by type and age.
 
 
 Now that we have a model for each of the tree types present in the tree grove that Fran the Farmer is investigating, it's time to put them to use by modeling the production of the grove.  Fran has provided us with details on the trees present in the tree grove (see Table 2).  She wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.
