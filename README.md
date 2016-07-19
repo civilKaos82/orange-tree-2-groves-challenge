@@ -83,7 +83,9 @@ Yep, we need to write tests for this type of tree, too. It might feel like the t
 *Table 2*.  The number of trees in the grove by type and age.
 
 
-Now that we have a model for each of the tree types present in the tree grove that Fran the Farmer is investigating, it's time to put them to use by modeling the production of the grove.  Fran has provided us with details on the trees present in the tree grove (see Table 2).  She wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.
+Now that we have a model for each of the tree types present in the grove, let's model the grove's production.  In Table 2 we can see how many of each type of tree is in the grove and how old they are.  Using the orange trees as an example, 20 orange trees are five years old.  20 orange trees are 20 years old.  Ten orange trees are 37 years old.  20 orange trees are 50 years old.
+
+Fran wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.
 
 Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  The behaviors of the class will be dictated by the needs of our application, but for a start ...
 
