@@ -85,36 +85,7 @@ Yep, we need to write tests for this type of tree, too. It might feel like the t
 
 Now that we have a model for each of the tree types present in the grove, let's model the grove's production.  In Table 2 we can see how many of each type of tree is in the grove and how old they are.  Using the orange trees as an example, 20 orange trees are five years old.  20 orange trees are 20 years old.  Ten orange trees are 37 years old.  20 orange trees are 50 years old.
 
-Fran wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.  Figure 2 shows an example of what the report might look like.
-
-
-```
-SEASON 1
-- Orange Trees: 70 trees (immature: 20, mature: 50, dead: 0)
-  Expected to produce around 10,000 oranges, average diameter of 2.8.
-
-- Apple Trees: 65 trees (immature: 10, mature: 50, dead: 5)
-  Expected to produce around 25,000 apples, average diameter of 3.2.
-  
-- Pear Trees: 50 trees (immature: 10, mature: 30, dead: 10)
-  Expected to produce around 6,000 pears, average diameter of 2.6.
-
-
-SEASON 2
-
-# Report Continues ...
-
-SEASON 10
-- Orange Trees: 70 trees (immature: 0, mature: 70, dead: 0)
-  Expected to produce around 14,000 oranges, average diameter of 2.7.
-
-- Apple Trees: 65 trees (immature: 0, mature: 40, dead: 25)
-  Expected to produce around 20,000 apples, average diameter of 3.3.
-  
-- Pear Trees: 50 trees (immature: 0, mature: 20, dead: 30)
-  Expected to produce around 4,000 pears, average diameter of 2.5.
-```
-*Figure 2*.  Example report output (production numbers will vary).
+Fran wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.  (See [example report][])
 
 
 Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  The behaviors of the class will be dictated by the needs of our application, but for a start ...
@@ -130,5 +101,6 @@ Define a `TreeGrove` class that will be responsible for managing the trees in th
 In this challenge, we've begun to explore inheritance.  It's a way to share behavior among similar types of objects, which can make our code easier to maintain.  Inheritance is only appropriate when the subclass (e.g., `OrangeTree`) is a specific type of the superclass (e.g., `FruitTree`).  We'll have more opportunities to explore inheritance and how it's implemented in Ruby as we proceed through Dev Bootcamp.
 
 
+[example report]: readme-assets/example_report.md
 [orange tree challenge]: ../../../orange-tree-1-just-oranges-challenge
 [rubylearning.com inheritance]: http://rubylearning.com/satishtalim/ruby_inheritance.html
