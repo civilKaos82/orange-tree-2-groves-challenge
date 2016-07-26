@@ -73,17 +73,17 @@ Yep, we need to write tests for this type of tree, too. It might feel like the t
 
 ### Release 3: Model the Tree Grove
 
-|                  | Age 0 | Age 5 | Age 20 | Age 37 | Age 50 |
-| :--------------- | ----: | ----: | -----: | -----: | -----: |
-| **orange trees** | 0     | 20    | 20     | 10     | 20     |
-| **apple trees**  | 10    | 10    | 20     | 20     | 5      |
-| **pear trees**   | 10    | 0     | 10     | 20     | 10     |
+|                  | Age 0 | Age 5 | Age 20 | Age 37 | Age 50 | Total Count |
+| :--------------- | ----: | ----: | -----: | -----: | -----: | ----------: |
+| **orange trees** | 0     | 20    | 20     | 10     | 20     | 70          |
+| **apple trees**  | 10    | 10    | 20     | 20     | 5      | 65          |
+| **pear trees**   | 10    | 0     | 10     | 20     | 10     | 50          |
 
 
 *Table 2*.  The number of trees in the grove by type and age.
 
 
-Now that we have a model for each of the tree types present in the grove, let's model the grove's production.  In Table 2 we can see how many of each type of tree is in the grove and how old they are.  Using the orange trees as an example, 20 orange trees are five years old.  20 orange trees are 20 years old.  Ten orange trees are 37 years old.  20 orange trees are 50 years old.
+Now that we have a model for each tree type in the grove, let's model the grove's production.  Data for the grove's trees is in Table 2.  We can see how many trees are in the grove, their types, and their ages.  Using orange trees as an example, the grove has a total of 70 orange trees.  20 of the orange trees are five years old, 20 of the orange trees are 20 years old, ten of the orange trees are 37 years old, and 20 of the orange trees are 50 years old.
 
 Fran wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.  (See [example report][])
 
