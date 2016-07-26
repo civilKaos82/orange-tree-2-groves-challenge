@@ -83,18 +83,19 @@ Yep, we need to write tests for this type of tree, too. It might feel like the t
 *Table 2*.  The number of trees in the grove by type and age.
 
 
-Now that we have a model for each tree type in the grove, let's model the grove's production.  Data for the grove's trees is in Table 2.  We can see how many trees are in the grove, their types, and their ages.  Using orange trees as an example, the grove has a total of 70 orange trees.  20 of the orange trees are five years old, 20 of the orange trees are 20 years old, ten of the orange trees are 37 years old, and 20 of the orange trees are 50 years old.
+Now that we have a model for each tree type in the grove, let's build a model of the grove.  Data for the grove's trees is in Table 2.  We can see how many trees are in the grove, their types, and their ages.  Using orange trees as an example, the grove has a total of 70 orange trees.  20 of the orange trees are five years old, 20 of the orange trees are 20 years old, ten of the orange trees are 37 years old, and 20 of the orange trees are 50 years old.
 
-Fran wants us to generate a report which models expected production over the next 10 growing seasons.  For each season our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees there are.  (See [example report][])
-
-
-Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  The behaviors of the class will be dictated by the needs of our application, but for a start ...
+Define a `TreeGrove` class that will be responsible for managing the trees in the grove.  Here is a list of some initial behaviors for the class.
 
 1. A tree grove can be initialized with an array of trees.
-2. When a tree grove passes a growing season, each of its trees passes a season.
+2. A tree grove can return different subsets of its trees:  all the trees, just trees of one type, just trees that are mature, etc.
+3. When a tree grove passes a growing season, each of its trees passes a season.
+
+*Hint:* We might want to edit our trees.  For example, we might want to initialize them with a given age and height.
 
 
-*Hint:* We might also want to edit our trees, if their current behaviors don't meet the requirements of our application.  For example, we might want to initialize them with a given age and height.
+### Release 4:  Model Expected Production
+It's time to put our models to use.  Fran wants us to generate a report of the grove's expected production over the next 10 growing seasons.  For each season, our report should specify (1) how many oranges, apples, and pears our model would expect to be produced each season, (2) the average size of each type of fruit, and (3) for each type of tree, we should detail how many immature, mature, dead and total trees are in the grove.  (See [example report][])
 
 
 ## Conclusion
